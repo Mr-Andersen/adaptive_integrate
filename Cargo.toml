@@ -1,0 +1,14 @@
+[package]
+name = "adaptive_integrate"
+version = "0.1.0"
+authors = ["aka_dude"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "cmp_naive_and_struct"
+harness = false
