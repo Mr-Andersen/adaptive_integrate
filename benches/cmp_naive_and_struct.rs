@@ -10,10 +10,10 @@ fn bench_cmp(c: &mut Criterion) {
     let mut group = c.benchmark_group("Integrate");
     for (i, f) in functions.into_iter().enumerate() {
         group.bench_with_input(BenchmarkId::new("Adaptive", i), &f, |b, f| {
-            b.iter(|| Integrator::new(f).with_prec(0.001))
+            b.iter(|| Integrator::new(f).with_prec(0.0001))
         });
         group.bench_with_input(BenchmarkId::new("Naive", i), &f, |b, f| {
-            b.iter(|| integrate(100, f))
+            b.iter(|| integrate(256, f))
         });
     }
     group.finish();
